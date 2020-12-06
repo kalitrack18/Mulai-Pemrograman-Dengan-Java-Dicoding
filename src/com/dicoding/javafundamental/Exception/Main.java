@@ -1,5 +1,9 @@
 package com.dicoding.javafundamental.Exception;
 
+import java.io.File;
+import java.io.FileReader;
+import java.util.Scanner;
+
 public class Main {
 
     /**
@@ -22,4 +26,28 @@ public class Main {
      *      kita. Ketika exception ini terjadi maka tidak ada yang bisa kita lakukan untuk mengatasinya, Contohnya ketika perangkat kerasnya
      *      rusak saat kita ingin membaca data.
      */
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       // mengambil data file yang akan di baca
+        String file = "D://mcb.txt";
+        try {
+            //membaca file
+            File callFile = new File(file);
+            Scanner fileReader = new Scanner(callFile);
+
+            while (fileReader.hasNextLine()){
+            String data = fileReader.nextLine();
+            System.out.println(data);
+            }
+
+        }catch (Exception e){
+            System.out.println("Terjadi kesalahan " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+
+
+    }
 }
