@@ -5,7 +5,11 @@ public class Main {
         Kucing anggora = new Kucing();
 
         Hewan hewan = anggora; // secara implisit upcasting
-        hewan
+        hewan = (Hewan) anggora; // secara explisit melakukan casting dari subclass ke superclass
+
+
+        Hewan hewan1 = new Kucing();
+        ((Kucing) hewan1).meow(); //downcast hewan2 ke kucing, casting dari superclass ke subcalss
 
     }
 }
